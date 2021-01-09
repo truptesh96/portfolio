@@ -1,0 +1,65 @@
+$base-fonts : Lato, sans-serif;
+$primary-fonts : Helvetica, sans-serif;
+$gray: #333333;
+$mid-gray: #666666;
+$light-gray: #999999;
+
+/*------- Spacing and Coumns Structure ------*/
+.paddingtb30{ padding: 30px 0; }
+.paddingtb60{ padding: 60px 0; }
+.paddingtb90{ padding: 90px 0; }
+.paddingtb120{ padding: 120px 0; }
+
+/*------- Typography --------*/
+body{ margin: 0; padding: 0; }
+
+body, html{ font-family: $base-fonts; font-size: 14px; }
+
+span, label, a, img{ display: inline-block; }
+
+form, dl, figure, p, ol, ul{ margin: 0 0 15px;
+	&:last-child{ margin: 0; }
+}
+
+p, article, li{ line-height: 1.8; }
+
+address{ font-style: inherit; }
+
+h1, h2, h3, h4, h5, h6{ font-family: $primary-fonts; }
+
+aside, main, input, form, textarea, ul, li, .button{ box-sizing: border-box; }
+
+
+/*--------------- Forms ----------------*/
+input, textarea{ padding: 12px 16px; font-size: 14px; }
+textarea{ resize: none; height: 165px; }
+
+
+/*------- Useful Mixins --------*/
+
+@mixin transform($property) {
+  -webkit-transform: $property; -ms-transform: $property; transform: $property;
+}
+
+/*------- Useful classes --------*/
+
+.rotate45 { @include transform(rotate(45deg)); }
+.abs-center{ position: absolute; top: 50%; left: 50%; @include transform(translate(-50%,-50%)); }
+
+.lr-auto{ margin-left: auto; margin-right: auto; }
+
+.clear{ clear: both;
+	&:after, &:before{ content: ''; display: table; clear: both; }
+}
+
+.dtab{ display: table; width: 100%; }
+.dcell{ display: table-cell; 
+	.center{ vertical-align: middle; }
+}
+
+.dflex{ display: flex; display: -webkit-box; display: -moz-box; display: -ms-flexbox; 
+  display: -webkit-flex; display: flex;
+  	&.no-wrap{ flex-wrap: nowrap; -ms-flex-wrap: none; }
+  	&.wrap{ flex-wrap: wrap; -ms-flex-wrap: wrap; }
+  	&.wrap-reverse{ flex-direction: row-reverse; -ms-flex-wrap: row-reverse; }
+}
