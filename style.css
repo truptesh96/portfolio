@@ -34,6 +34,10 @@ img, input, form {
   max-width: 100%;
 }
 
+img.rounded {
+  border-radius: 50%;
+}
+
 form, dl, figure, p, ol, ul {
   margin: 0 0 15px;
 }
@@ -134,6 +138,21 @@ textarea {
 
 .w100 {
   width: 100%;
+}
+
+.content-area, .sidebar {
+  float: left;
+  width: 100%;
+}
+
+.sidebar {
+  padding: 0 15px;
+  max-width: 300px;
+}
+
+.content-area {
+  max-width: calc(100% - 300px);
+  padding: 0 25px;
 }
 
 /*# sourceMappingURL=style.css.map */

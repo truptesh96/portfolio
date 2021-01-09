@@ -19,6 +19,10 @@ span, label, a, img{ display: inline-block; }
 
 img, input, form{ max-width: 100%; }
 
+img{
+	&.rounded{ border-radius: 50%; }
+}
+
 form, dl, figure, p, ol, ul{ margin: 0 0 15px;
 	&:last-child{ margin: 0; }
 }
@@ -68,3 +72,5 @@ textarea{ resize: none; height: 165px; }
 .rotate45 { @include transform(rotate(45deg)); }
 
 .w100 { width: 100%; }
+
+@import 'home.scss';
