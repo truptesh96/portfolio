@@ -30,6 +30,10 @@ span, label, a, img {
   display: inline-block;
 }
 
+img, input, form {
+  max-width: 100%;
+}
+
 form, dl, figure, p, ol, ul {
   margin: 0 0 15px;
 }
@@ -66,12 +70,6 @@ textarea {
 
 /*------- Useful Mixins --------*/
 /*------- Useful classes --------*/
-.rotate45 {
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
 .abs-center {
   position: absolute;
   top: 50%;
@@ -126,6 +124,16 @@ textarea {
 .dflex.wrap-reverse {
   flex-direction: row-reverse;
   -ms-flex-wrap: row-reverse;
+}
+
+.rotate45 {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.w100 {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

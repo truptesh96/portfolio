@@ -17,6 +17,8 @@ body, html{ font-family: $base-fonts; font-size: 14px; }
 
 span, label, a, img{ display: inline-block; }
 
+img, input, form{ max-width: 100%; }
+
 form, dl, figure, p, ol, ul{ margin: 0 0 15px;
 	&:last-child{ margin: 0; }
 }
@@ -43,7 +45,6 @@ textarea{ resize: none; height: 165px; }
 
 /*------- Useful classes --------*/
 
-.rotate45 { @include transform(rotate(45deg)); }
 .abs-center{ position: absolute; top: 50%; left: 50%; @include transform(translate(-50%,-50%)); }
 
 .lr-auto{ margin-left: auto; margin-right: auto; }
@@ -63,3 +64,7 @@ textarea{ resize: none; height: 165px; }
   	&.wrap{ flex-wrap: wrap; -ms-flex-wrap: wrap; }
   	&.wrap-reverse{ flex-direction: row-reverse; -ms-flex-wrap: row-reverse; }
 }
+
+.rotate45 { @include transform(rotate(45deg)); }
+
+.w100 { width: 100%; }
