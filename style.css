@@ -6,7 +6,7 @@ body {
 
 body, html {
   font-family: "Comfortaa", cursive;
-  font-size: 14px;
+  font-size: 22px;
   box-sizing: border-box;
 }
 
@@ -44,27 +44,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 75px;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 60px;
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 45px;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 30px;
 }
 
 h5 {
-  font-size: 1rem;
+  font-size: 26px;
 }
 
 h6 {
-  font-size: 14px;
+  font-size: 22px;
+}
+
+.fonts40 {
+  font-size: 40px;
+}
+
+.fonts60 {
+  font-size: 60px;
 }
 
 aside, main, input, form, textarea, ul, li, .button {

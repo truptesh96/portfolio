@@ -9,7 +9,7 @@ $wrapper-width : 1280px;
 
 /*------- Typography --------*/
 body{ margin: 0; padding: 0; }
-body, html{ font-family: $base-fonts; font-size: 14px; box-sizing: border-box; }
+body, html{ font-family: $base-fonts; font-size: 22px; box-sizing: border-box; }
 
 button, span, label, a, img{ display: inline-block; }
 
@@ -27,12 +27,15 @@ address{ font-style: inherit; }
 
 h1, h2, h3, h4, h5, h6{ font-family: $primary-fonts; letter-spacing: 1px; }
 
-h1{ font-size: 2.5rem; }
-h2{ font-size: 2rem; }
-h3{ font-size: 1.75rem; }
-h4{ font-size: 1.5rem; }
-h5{ font-size: 1rem; } 
-h6{ font-size: 14px; }
+h1{ font-size: 75px; }
+h2{ font-size: 60px; }
+h3{ font-size: 45px; }
+h4{ font-size: 30px; }
+h5{ font-size: 26px; } 
+h6{ font-size: 22px; }
+
+.fonts40{ font-size: 40px; }
+.fonts60{ font-size: 60px; }
 
 aside, main, input, form, textarea, ul, li, .button{ box-sizing: border-box; }
 
