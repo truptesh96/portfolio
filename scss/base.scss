@@ -4,8 +4,8 @@ $gray: #333333;
 $mid-gray: #666666;
 $light-gray: #999999;
 
-$big-wrappper-width: 1440px;
-$wrapper-width : 1280px;
+$big-wrappper-width: 98vw;
+$wrapper-width : 64vw;
 
 /*------- Typography --------*/
 body{ margin: 0; padding: 0; }
@@ -81,8 +81,8 @@ textarea{ resize: none; height: 165px; }
 .paddingtb90{ padding: 90px 0; }
 .paddingtb120{ padding: 120px 0; }
 .w100 { width: 100%; }
-.wide-wrapper{ max-width: $big-wrappper-width; @extend .w100; }
-.wrapper{ max-width: $wrapper-width; @extend .w100; }
+.wide-wrapper{ max-width: $big-wrappper-width; @extend .w100; padding: 2vw; }
+.wrapper{ max-width: $wrapper-width; @extend .w100; padding: 2vw; }
 
 
 
