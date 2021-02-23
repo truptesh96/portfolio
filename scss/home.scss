@@ -1,13 +1,46 @@
 @import 'screens.scss';
 
 
+.anim{ opacity: 0; }
+.anim.animate{ opacity: 1;  -webkit-transition: 0.8s 0.1s cubic-bezier(0.8,0,0.4,1);
+transition: 0.8s 0.1s cubic-bezier(0.8,0,0.4,1); }
+
+.page-head{ position: relative; background: #1B0F2D; padding-bottom: 0; margin-bottom: 45px; }
+.page-head .dflex{ align-items: flex-end; }
+.page-head.wave:before{ top: 50%; }
+.page-head h1{ font-family: "Comfortaa", cursive; overflow: hidden; }
+.page-head .content{ padding: 0 50px; }
+.page-title span{ position: relative; }
+.page-head .page-title span.animate{ color: #e24934; }
+.page-head .page-title span.animate:before,
+.page-head:hover .page-title span:before{ width: 100%; transition: 2s linear all; }
+.page-title span:before{ content: attr(data-text); color: #0FA896; position: absolute; left: -4px;
+text-shadow: 6px 5px 4px #ffdfc1; width: 0; overflow: hidden; }
+
+
+@keyframes tree_anim{
+
+	0%{ background-position: center bottom; }
+	50%{ background-position: center center; }
+	100%{ background-position: center bottom; }
+
+}
+.personal{ position: relative; }
+.personal:before, .personal:after{ content: ''; display: block; width: 150px; height: 45%; position: absolute; 
+z-index: 0; background-size: contain; background: url('img/review-bg.png'); }
+.personal:before{ top: 0; left: 0; }
+.personal:after{ bottom: 0; right: 0; }
+.personal .wrapper{ background: url(img/mountains.png) no-repeat; transition: 1s linear;
+background-position: center center; animation: tree_anim 2s ease-in-out infinite; }
+
+
+
 @media (min-width: $tablet)
 {
 	
 }
 
-@media (min-width: $desktop)
-{
 
+@media (min-width: $desktop){
 
 }

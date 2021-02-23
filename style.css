@@ -7,31 +7,40 @@ body {
 body, html {
   font-family: "Comfortaa", cursive;
   font-size: 22px;
-  box-sizing: border-box;
 }
 
 button, span, label, a, img {
   display: inline-block;
 }
 
-textarea, img, input, form {
+img, figure, ol, dl,
+aside, main, input, form,
+textarea, ul, li, .btn, section, .w100, .wrapper, .wide-wrapper, iframe, form {
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .rounded {
   border-radius: 50%;
 }
 
-form, dl, figure, p, ol, ul {
-  margin: 0 0 15px;
-  white-space: pre-wrap;
+figure:not(.has-caption) {
+  margin: 0;
 }
-form:last-child, dl:last-child, figure:last-child, p:last-child, ol:last-child, ul:last-child {
+
+dl, form, dl, figure, p, ol, ul {
+  margin: 0 0 15px;
+}
+dl:last-child, form:last-child, dl:last-child, figure:last-child, p:last-child, ol:last-child, ul:last-child {
   margin: 0;
 }
 
 p, article, li {
   line-height: 1.8;
+}
+
+a {
+  white-space: pre-wrap;
 }
 
 address {
@@ -41,6 +50,7 @@ address {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
+  margin: 0 0 25px;
 }
 
 h1 {
@@ -67,6 +77,10 @@ h6 {
   font-size: 22px;
 }
 
+.fonts28 {
+  font-size: 28px;
+}
+
 .fonts40 {
   font-size: 40px;
 }
@@ -75,8 +89,54 @@ h6 {
   font-size: 60px;
 }
 
-aside, main, input, form, textarea, ul, li, .button {
-  box-sizing: border-box;
+/*---- Link And Buttons ------*/
+a {
+  color: red;
+}
+a:hover {
+  color: blue;
+}
+a:active {
+  color: yellow;
+}
+
+button, input[type=submit], input[type=reset],
+input[type=submit], .btn {
+  border: 2px solid blue;
+  outline: none;
+  transition: 0.5s all ease;
+  padding: 18px 14px;
+  text-align: center;
+  color: #fff;
+  background: blue;
+}
+button:hover, input[type=submit]:hover, input[type=reset]:hover,
+input[type=submit]:hover, .btn:hover {
+  border: 2px solid blue;
+  color: #fff;
+  background: blue;
+}
+button:active, input[type=submit]:active, input[type=reset]:active,
+input[type=submit]:active, .btn:active {
+  border: 2px solid blue;
+  border: 2px solid blue;
+  color: #fff;
+  background: blue;
+}
+button:focus, input[type=submit]:focus, input[type=reset]:focus,
+input[type=submit]:focus, .btn:focus {
+  border: 2px solid blue;
+  border: 2px solid blue;
+  color: #fff;
+  background: blue;
+}
+button.big, input[type=submit].big, input[type=reset].big,
+input[type=submit].big, .btn.big {
+  padding: 22px 18px;
+}
+button.rounded, input[type=submit].rounded, input[type=reset].rounded,
+input[type=submit].rounded, .btn.rounded {
+  border-radius: 40px;
 }
 
 /*--------------- Forms ----------------*/
@@ -126,27 +186,28 @@ textarea {
   vertical-align: middle;
 }
 
-.dflex {
-  display: flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+@media (min-width: 768px) {
+  .dflex {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .dflex.no-wrap {
+    flex-wrap: nowrap;
+    -ms-flex-wrap: none;
+  }
+  .dflex.wrap {
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+  }
+  .dflex.wrap-reverse {
+    flex-direction: row-reverse;
+    -ms-flex-wrap: row-reverse;
+  }
 }
-.dflex.no-wrap {
-  flex-wrap: nowrap;
-  -ms-flex-wrap: none;
-}
-.dflex.wrap {
-  flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-}
-.dflex.wrap-reverse {
-  flex-direction: row-reverse;
-  -ms-flex-wrap: row-reverse;
-}
-
 .rotate45 {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -175,13 +236,141 @@ textarea {
 }
 
 .wide-wrapper {
-  max-width: 98vw;
-  padding: 2vw;
+  max-width: 90vw;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .wrapper {
-  max-width: 64vw;
-  padding: 2vw;
+  max-width: 70vw;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.wave:before {
+  content: "";
+  background: url("img/wave-icon.png") no-repeat;
+  top: 0;
+  border-radius: 50%;
+  display: block;
+  width: 0;
+  height: 28px;
+  position: absolute;
+  z-index: 1;
+}
+.wave.left:before {
+  background-position: left center;
+  left: 0;
+}
+.wave.right:before {
+  background-position: right center;
+  right: 0;
+}
+.wave.animate:before {
+  width: 90px;
+  border-radius: 0;
+  transition: 2s all ease;
+}
+
+.anim {
+  opacity: 0;
+}
+
+.anim.animate {
+  opacity: 1;
+  -webkit-transition: 0.8s 0.1s cubic-bezier(0.8, 0, 0.4, 1);
+  transition: 0.8s 0.1s cubic-bezier(0.8, 0, 0.4, 1);
+}
+
+.page-head {
+  position: relative;
+  background: #1B0F2D;
+  padding-bottom: 0;
+  margin-bottom: 45px;
+}
+
+.page-head .dflex {
+  align-items: flex-end;
+}
+
+.page-head.wave:before {
+  top: 50%;
+}
+
+.page-head h1 {
+  font-family: "Comfortaa", cursive;
+  overflow: hidden;
+}
+
+.page-head .content {
+  padding: 0 50px;
+}
+
+.page-title span {
+  position: relative;
+}
+
+.page-head .page-title span.animate {
+  color: #e24934;
+}
+
+.page-head .page-title span.animate:before,
+.page-head:hover .page-title span:before {
+  width: 100%;
+  transition: 2s linear all;
+}
+
+.page-title span:before {
+  content: attr(data-text);
+  color: #0FA896;
+  position: absolute;
+  left: -4px;
+  text-shadow: 6px 5px 4px #ffdfc1;
+  width: 0;
+  overflow: hidden;
+}
+
+@keyframes tree_anim {
+  0% {
+    background-position: center bottom;
+  }
+  50% {
+    background-position: center center;
+  }
+  100% {
+    background-position: center bottom;
+  }
+}
+.personal {
+  position: relative;
+}
+
+.personal:before, .personal:after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 45%;
+  position: absolute;
+  z-index: 0;
+  background-size: contain;
+  background: url("img/review-bg.png");
+}
+
+.personal:before {
+  top: 0;
+  left: 0;
+}
+
+.personal:after {
+  bottom: 0;
+  right: 0;
+}
+
+.personal .wrapper {
+  background: url(img/mountains.png) no-repeat;
+  transition: 1s linear;
+  background-position: center center;
+  animation: tree_anim 2s ease-in-out infinite;
 }
 
 /*# sourceMappingURL=style.css.map */
