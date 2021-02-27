@@ -4,28 +4,49 @@
 .anim{ opacity: 0; }
 .anim.animate{ opacity: 1;  -webkit-transition: 0.8s 0.1s cubic-bezier(0.8,0,0.4,1);
 transition: 0.8s 0.1s cubic-bezier(0.8,0,0.4,1); }
-
-.page-head{ position: relative; background: #1B0F2D; padding-bottom: 0; margin-bottom: 45px; }
+.page-head{ position: relative; padding-bottom: 0; margin-bottom: 45px; }
 .page-head .dflex{ align-items: flex-end; }
-.page-head.wave:before{ top: 50%; }
-.page-head h1{ font-family: "Comfortaa", cursive; overflow: hidden; }
-.page-head .content{ padding: 0 50px; }
-.page-title span{ position: relative; }
+.page-head.wave:before{ top: 90%; }
+.page-head figure.wave:before{ left: -15px; } 
+.page-head .content{ padding: 20px 0; }
+.page-head h1{ font-family: "Comfortaa", cursive; overflow: hidden; margin : 0 0 25px; }
+.page-title span{ position: relative; padding-right: 25px; }
 .page-head .page-title span.animate{ color: #e24934; }
 .page-head .page-title span.animate:before,
 .page-head:hover .page-title span:before{ width: 100%; transition: 2s linear all; }
 .page-title span:before{ content: attr(data-text); color: #0FA896; position: absolute; left: -4px;
-text-shadow: 6px 5px 4px #ffdfc1; width: 0; overflow: hidden; }
+text-shadow: 2px 0px 4px #ffdfc1; width: 0; overflow: hidden; }
+.page-head .subtitle{ color: #e24934; }
+.page-head .content{ padding: 25px 0; }
+
+.speakup{ position: relative; padding: 40px 0; }
+.speakup svg{ max-width: 100%; position: relative; z-index: 99; fill: #1B0F2D; }
+.speakup .bar{ content: ""; background: #0FA896; height: calc(100% - 84px); width: 30px; top: 50%;
+position: absolute; display: block; transform: translateY(-50%); animation: soundwave_anim
+2.5s ease-in-out infinite; left: -40px; }
+.speakup .bar:nth-child(2){ background: #ffdfc1; animation-delay: 0.05s; }
+.speakup .bar:nth-child(3){ background: #f4f4f4; animation-delay: 0.10s; }
+.speakup .bar:nth-child(4){ background: #e24934; animation-delay: 0.15s; }
+
+
+
+@keyframes soundwave_anim{
+	0%{ left: -40px; }
+	50%{ left: 50vw; }
+	100%{ left: calc(100vw + 40px); }
+}
+
+
 
 
 @keyframes tree_anim{
-
 	0%{ background-position: center bottom; }
 	50%{ background-position: center center; }
 	100%{ background-position: center bottom; }
-
 }
+
 .personal{ position: relative; }
+.bar-wrap{ overflow: hidden; position: absolute; height: 100%; width: 100%; top: 0; }
 .personal:before, .personal:after{ content: ''; display: block; width: 150px; height: 45%; position: absolute; 
 z-index: 0; background-size: contain; background: url('img/review-bg.png'); }
 .personal:before{ top: 0; left: 0; }
@@ -34,13 +55,14 @@ z-index: 0; background-size: contain; background: url('img/review-bg.png'); }
 background-position: center center; animation: tree_anim 2s ease-in-out infinite; }
 
 
-
 @media (min-width: $tablet)
 {
-	
+	.page-head .content{ padding: 25px 25px 35px; }
 }
 
 
 @media (min-width: $desktop){
 
+	.page-head .content{ padding: 25px 50px 40px; }
+	.page-title span:before{ text-shadow: 6px 5px 4px #ffdfc1; }
 }

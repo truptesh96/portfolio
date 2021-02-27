@@ -1,3 +1,5 @@
+@import 'screens.scss';
+
 $base-fonts : 'Comfortaa', cursive; 
 $primary-fonts : 'Poppins', sans-serif;
 
@@ -14,12 +16,12 @@ $wrapper-width : 70vw;
 
 /*------- Typography --------*/
 body{ margin: 0; padding: 0; }
-body, html{ font-family: $base-fonts; font-size: 22px; }
+body, html{ font-family: $base-fonts; font-size: 16px; }
 
 button, span, label, a, img{ display: inline-block; }
 
 img, figure, ol, dl,
-aside, main, input, form, textarea, ul, li, .btn, section, .w100, iframe,
+aside, main, input, form, textarea, ul, section, .w100, iframe,
 textarea, img, input, form{ max-width: 100%; box-sizing: border-box; }
 
 .rounded{ border-radius: 50%; }
@@ -30,24 +32,26 @@ dl,form, dl, figure, p, ol, ul{ margin: 0 0 15px;
 	&:last-child{ margin: 0; }
 }
 
+dl, ol, ul{ padding: 0; 
+	&.reset li{ list-style: none; }
+}
+
 p, article, li{ line-height: 1.8; }
-
 a{ white-space: pre-wrap; }
-
 address{ font-style: inherit; }
 
 h1, h2, h3, h4, h5, h6{ font-family: $primary-fonts; letter-spacing: 1px; margin: 0 0 25px; }
-h1{ font-size: 75px; }
-h2{ font-size: 60px; }
-h3{ font-size: 45px; }
-h4{ font-size: 30px; }
-h5{ font-size: 26px; } 
-h6{ font-size: 22px; }
+h1{ font-size: 40px; }
+h2{ font-size: 28px; }
+h3{ font-size: 25px; }
+h4{ font-size: 22px; }
+h5{ font-size: 18px; } 
+h6{ font-size: 16px; }
 
 
-.fonts28{ font-size: 28px; }
-.fonts40{ font-size: 40px; }
-.fonts60{ font-size: 60px; }
+.fonts28{ font-size: 18px; }
+.fonts40{ font-size: 28px; }
+.fonts60{ font-size: 30px; }
 
 /*---- Link And Buttons ------*/
 a{ color: $link-color;
@@ -109,10 +113,12 @@ textarea{ resize: none; height: 165px; }
 }
 
 .dflex{ display: flex; display: -webkit-box; display: -moz-box; display: -ms-flexbox; 
-  	display: -webkit-flex; display: flex;
+  	display: -webkit-flex; display: flex; flex-wrap: wrap;
   	&.no-wrap{ flex-wrap: nowrap; -ms-flex-wrap: none; }
   	&.wrap{ flex-wrap: wrap; -ms-flex-wrap: wrap; }
   	&.wrap-reverse{ flex-direction: row-reverse; -ms-flex-wrap: row-reverse; }
+
+  	> * { width: 100%; }
 }
 
 .rotate45 { @include transform(rotate(45deg)); }
@@ -124,24 +130,87 @@ textarea{ resize: none; height: 165px; }
 .paddingtb90{ padding: 90px 0; }
 .paddingtb120{ padding: 120px 0; }
 .w100 { width: 100%; }
-.wide-wrapper{ max-width: $big-wrappper-width; @extend .w100; padding: 0 15px; margin: 0 auto; }
-.wrapper{ max-width: $wrapper-width; @extend .w100; padding: 0 15px; margin: 0 auto; }
+.wrapper , .wide-wrapper{ padding: 0 15px; margin: 0 auto;  @extend .w100; }
 
-
-.wave{
+.wave{ position: relative;
 	&:before{ content: ''; background: url("img/wave-icon.png") no-repeat; top: 0;
 	border-radius: 50%; display: block; width: 0; height: 28px; position: absolute; z-index: 1; }
-	
 	&.left{ 
 		&:before{ background-position: left center; left: 0; }
 	}
 	&.right{  
 		&:before{ background-position: right center; right: 0; }
 	}
-
 	&.animate:before{ width: 90px; border-radius: 0; transition: 2s all ease; }
-
 }
+
+.corner{ position: relative;
+	&:before{ content: ''; background: url("img/wave-icon.png") no-repeat; top: 0;
+	border-radius: 50%; display: block; width: 0; height: 28px; position: absolute; z-index: 1; }
+	&.left{ 
+		&:before{ background-position: left center; left: 0; }
+	}
+	&.right{  
+		&:before{ background-position: right center; right: 0; }
+	}
+	&.animate:before{ width: 90px; border-radius: 0; transition: 2s all ease; }	
+}
+
+
+.drak-bg{ background-color: #1B0F2D; }
+
+
+
+@media (min-width: $tablet)
+{
+	h1, h2, h3, h4, h5, h6{ font-family: $primary-fonts; letter-spacing: 1px; margin: 0 0 25px; }
+	h1{ font-size: 55px; }
+	h2{ font-size: 48px; }
+	h3{ font-size: 40px; }
+	h4{ font-size: 24px; }
+	h5{ font-size: 22px; }
+	h6{ font-size: 18px; }
+
+	.fonts28{ font-size: 24px; }
+	.fonts40{ font-size: 37px; }
+	.fonts60{ font-size: 46px; }
+
+	body, html{ font-size: 18px; }
+}
+
+
+@media (min-width: $desktop){
+
+	h1, h2, h3, h4, h5, h6{ font-family: $primary-fonts; letter-spacing: 1px; margin: 0 0 25px; }
+	h1{ font-size: 75px; }
+	h2{ font-size: 60px; }
+	h3{ font-size: 45px; }
+	h4{ font-size: 30px; }
+	h5{ font-size: 26px; } 
+	h6{ font-size: 22px; }
+
+	body, html{ font-size: 18px; }
+	
+	.fonts28{ font-size: 28px; }
+	.fonts40{ font-size: 40px; }
+	.fonts60{ font-size: 60px; }
+
+	.wide-wrapper{ max-width: $big-wrappper-width; }
+	.wrapper{ max-width: $wrapper-width; }
+ 
+}
+
+
+
+/*.connect{ background: url(img/sky-bg.jpeg)no-repeat; background-size: cover; 
+background-position: center; background-attachment: fixed; position: relative; }
+*/
+
+/*------ footer -----*/
+.pfooter{ padding: 20px 0; text-align: center; }
+.socials { padding: 35px 0; text-align: center; border-bottom: 6px solid red; }
+.socials li a, .footer-social li{ display: inline-flex; line-height: 1; 
+margin: 0 5px; }
 
 
 @import 'home.scss';
