@@ -1,0 +1,41 @@
+.anim:not(.animate) {
+  will-change: opacity;
+  opacity: 0;
+  -webkit-transition: 0.8s 0.1s cubic-bezier(0.8, 0, 0.4, 1);
+  transition: 0.8s 0.1s cubic-bezier(0.8, 0, 0.4, 1);
+  overflow: hidden;
+}
+
+@keyframes animUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.anim.animate {
+  animation: animFade 1s ease;
+}
+
+.fadeScreenUp.anim:not(.animate) {
+  transform: translateY(50px);
+}
+
+.fadeScreenUp.anim.animate {
+  animation: animUp 1s ease;
+}
+
+.fadeleft:not(.animate){ transform: translateX(-40px); }

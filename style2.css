@@ -1,0 +1,16 @@
+/*------- Typography --------*/
+body { margin: 0; padding: 0; }
+
+body, html { font-family: "Comfortaa", cursive; font-size: 16px; }
+
+.swrap{ display: flex; flex-wrap: wrap; }
+.swrap .sidebar{ position: sticky; top: 0; left: 0; height: 100vh; overflow: auto; width: 320px;
+}
+.swrap .lms-content{ max-width: calc(100% - 320px); }
+.swrap .lms-content{ padding: 50px 35px; }
+.cont-tabs { padding: 20px 0; margin: 0; }
+.sidebar li.active, .sidebar li:hover{ background: #f4f4f4; list-style: none; color: #666; }
+.sidebar li{ background: #666; color: #fff; padding: 12px; transition: 0.25s ease; }
+.sidebar li:hover{ cursor: pointer; }
+
+.lms-content .cont-row{ min-height: 100vh; }
