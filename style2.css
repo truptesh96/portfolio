@@ -1,3 +1,4 @@
+
 /*------- Typography --------*/
 body { margin: 0; padding: 0; }
 
@@ -12,5 +13,4 @@ body, html { font-family: "Comfortaa", cursive; font-size: 16px; }
 .sidebar li.active, .sidebar li:hover{ background: #f4f4f4; list-style: none; color: #666; }
 .sidebar li{ background: #666; color: #fff; padding: 12px; transition: 0.25s ease; }
 .sidebar li:hover{ cursor: pointer; }
-
 .lms-content .cont-row{ min-height: 100vh; }
