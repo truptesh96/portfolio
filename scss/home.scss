@@ -3,7 +3,7 @@
 .anim{ opacity: 0; }
 .anim.animate{ opacity: 1;  -webkit-transition: 0.8s 0.1s cubic-bezier(0.8,0,0.4,1);
 transition: 0.8s 0.1s cubic-bezier(0.8,0,0.4,1); }
-.page-head{ position: relative; }
+.page-head{ position: relative; overflow-x: hidden; }
 .page-head > .dflex{ align-items: center; }
 .page-head:before{ top: 40px; left: 0; }
 .page-head figure.wave:before{ left: -15px; top: -40px; } 
@@ -26,31 +26,30 @@ transition: 0.8s 0.1s cubic-bezier(0.8,0,0.4,1); }
 }
 
 
-section { position: relative; overflow-x: hidden; min-height: 800px; display: grid;
+section { position: relative; overflow-x: hidden; min-height: 100vh; display: grid;
     align-content: center; }
 
-.page-head .inWrap { max-width: 650px; align-items: center;
-    margin: 0 0 0 auto;
-    padding: 12px;
-    border-radius: 200px 0 0 200px;
-    display: flex; }
+.page-head .inWrap { max-width: 650px; align-items: center; display: flex; flex-direction: column;
+    margin: 0 0 0 auto; padding: 12px; border-radius: 200px 0 0 200px; }
 
-
-.page-head .inWrap figure { border-radius: 200px 200px 0 0; border: 2px solid #fff; 
-	overflow: hidden; padding: 16px 12px; }
+.page-head .inWrap figure { border-radius: 200px 200px 0 0; 
+	overflow: hidden; padding: 4; max-width: 320px; background: #fff; }
 
 .page-head .inWrap figure img { border-radius: 200px 200px 0 0; }
 
-.page-head .fonts100 { font-weight: bold; font-family: "Comfortaa", cursive;
--webkit-text-stroke-color: red; -webkit-text-stroke-width: 2px; color: transparent;
-letter-spacing: 36px; text-shadow: 0 0 20px red; z-index: 1; top: 20%; display: block; }
+.page-head .fonts100 { font-weight: bold; font-family: "Comfortaa", cursive; color: transparent;
+letter-spacing: 6px; text-shadow: 0 0 20px red; z-index: 1; top: 20%; display: block;
+@include transText(2px, red)
+}
 
 .page-head .page-title { padding-left: 30px; }
 
 
 .page-head .dev2{ text-align: right; }
 
-.personal{ position: relative; transition: 1s linear; background-position: center center; }
+.personal{ position: relative; transition: 1s linear; }
+.personal .title { @include transText(0.5px, red); letter-spacing: 6px; }
+
 .bar-wrap{ overflow: hidden; position: absolute; height: 100%; width: 100%; top: 0; }
 .personal:before{ top: 0; left: 0; }
 .personal:after{ bottom: 0; right: 0; }

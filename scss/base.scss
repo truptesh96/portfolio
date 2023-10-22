@@ -16,7 +16,7 @@ $big-wrappper-width: 96vw;
 $wrapper-width : 90vw;
 
 /*------- Typography --------*/
-body{ margin: 0; padding: 0; border-left: 44px solid #fff; }
+body{ margin: 0; padding: 0; }
 body, html{ font-family: $base-fonts; font-size: 16px; }
 
 button, span, label, a, img{ display: inline-block; }
@@ -186,18 +186,18 @@ body{
 	background: #f4f4f4;
 }
 
+.fonts100 { font-size: 36px; }
 
-.fonts100 { font-size: 100px; }
 
 @mixin transText($width:2px, $color: #707070) {
     -webkit-text-stroke-width: $width;
     -webkit-text-stroke-color: $color;
-    color: transparent;
+    color: transparent; font-weight:  normal;
 }
 
 .transText {
 
-   @include transText();
+   @include transText(0.5px,#707070);
     
    @media (min-width: $tablet) {
                
@@ -211,9 +211,9 @@ body{
   100%{ transform : translateX(-100%); }  
 }
 
-.marqueeWrap { display: flex; flex-wrap: nowrap; font-size: 200px; white-space: nowrap; 
+.marqueeWrap { display: flex; flex-wrap: nowrap; font-size: 60px; white-space: nowrap; 
   overflow: hidden;
-  
+
   .inrItem {
     margin: 0 30px 0 0; animation: marqueeanim infinite linear 40s;
   }
@@ -233,7 +233,7 @@ background: #0FA896; }
 
 .sitenavToggle { position: fixed; top: 0; left: 0; height: 60px; width: 44px; display: flex;
   justify-content: center; padding: 8px 0 0; background: transparent; border: none; 
-  outline: none; }
+  outline: none; opacity: 0; }
 
 .menuToggle:after { margin: 8px 0 -8px; } 
 .menuToggle:before{ margin: 16px 0 8px; }
@@ -276,6 +276,7 @@ content: ''; display: block; border-radius: 50%; }
 	.fonts28{ font-size: 28px; }
 	.fonts40{ font-size: 40px; }
 	.fonts60{ font-size: 60px; }
+	.fonts100 { font-size: 100px; }
 
 	.wide-wrapper{ max-width: $big-wrappper-width; }
 	.wrapper{ max-width: $wrapper-width; }
@@ -283,16 +284,14 @@ content: ''; display: block; border-radius: 50%; }
 	.timeline-hist{ padding: 90px 0; }
  
 }
-
-
-
-/*.connect{ background: url(img/sky-bg.jpeg)no-repeat; background-size: cover; 
-background-position: center; background-attachment: fixed; position: relative; }
-*/
+ 
 
 /*------ footer -----*/
 .pfooter{ padding: 20px 0; text-align: center; }
-.socials { padding: 0; text-align: center; bottom: 22px; left: -4px; position: fixed; }
+.socials { padding: 0; text-align: center; bottom: 22px; left: -4px; position: fixed;     background: #fff;
+    z-index: 9;
+    border-radius: 0 18px 18px 0;
+    box-shadow: 0 0 16px #bbb; }
 .socials li a, .footer-social li{ display: inline-flex; line-height: 1; margin: 0 5px; }
 .socials ul { display: flex; flex-direction: column; }
 .socials ul svg { max-width: 26px; max-height: 26px; }

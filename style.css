@@ -86,7 +86,6 @@
 body {
   margin: 0;
   padding: 0;
-  border-left: 44px solid #fff;
 }
 
 body, html {
@@ -427,19 +426,21 @@ body {
 }
 
 .fonts100 {
-  font-size: 100px;
+  font-size: 36px;
 }
 
 .transText {
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: #707070;
   color: transparent;
+  font-weight: normal;
 }
 @media (min-width: 768px) {
   .transText {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #707070;
     color: transparent;
+    font-weight: normal;
   }
 }
 
@@ -454,7 +455,7 @@ body {
 .marqueeWrap {
   display: flex;
   flex-wrap: nowrap;
-  font-size: 200px;
+  font-size: 60px;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -488,6 +489,7 @@ body {
   background: transparent;
   border: none;
   outline: none;
+  opacity: 0;
 }
 
 .menuToggle:after {
@@ -588,6 +590,10 @@ body {
     font-size: 60px;
   }
 
+  .fonts100 {
+    font-size: 100px;
+  }
+
   .wide-wrapper {
     max-width: 96vw;
   }
@@ -600,9 +606,6 @@ body {
     padding: 90px 0;
   }
 }
-/*.connect{ background: url(img/sky-bg.jpeg)no-repeat; background-size: cover; 
-background-position: center; background-attachment: fixed; position: relative; }
-*/
 /*------ footer -----*/
 .pfooter {
   padding: 20px 0;
@@ -615,6 +618,10 @@ background-position: center; background-attachment: fixed; position: relative; }
   bottom: 22px;
   left: -4px;
   position: fixed;
+  background: #fff;
+  z-index: 9;
+  border-radius: 0 18px 18px 0;
+  box-shadow: 0 0 16px #bbb;
 }
 
 .socials li a, .footer-social li {
@@ -645,6 +652,7 @@ background-position: center; background-attachment: fixed; position: relative; }
 
 .page-head {
   position: relative;
+  overflow-x: hidden;
 }
 
 .page-head > .dflex {
@@ -713,7 +721,7 @@ background-position: center; background-attachment: fixed; position: relative; }
 section {
   position: relative;
   overflow-x: hidden;
-  min-height: 800px;
+  min-height: 100vh;
   display: grid;
   align-content: center;
 }
@@ -721,17 +729,19 @@ section {
 .page-head .inWrap {
   max-width: 650px;
   align-items: center;
+  display: flex;
+  flex-direction: column;
   margin: 0 0 0 auto;
   padding: 12px;
   border-radius: 200px 0 0 200px;
-  display: flex;
 }
 
 .page-head .inWrap figure {
   border-radius: 200px 200px 0 0;
-  border: 2px solid #fff;
   overflow: hidden;
-  padding: 16px 12px;
+  padding: 4;
+  max-width: 320px;
+  background: #fff;
 }
 
 .page-head .inWrap figure img {
@@ -741,14 +751,16 @@ section {
 .page-head .fonts100 {
   font-weight: bold;
   font-family: "Comfortaa", cursive;
-  -webkit-text-stroke-color: red;
-  -webkit-text-stroke-width: 2px;
   color: transparent;
-  letter-spacing: 36px;
+  letter-spacing: 6px;
   text-shadow: 0 0 20px red;
   z-index: 1;
   top: 20%;
   display: block;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: red;
+  color: transparent;
+  font-weight: normal;
 }
 
 .page-head .page-title {
@@ -762,7 +774,14 @@ section {
 .personal {
   position: relative;
   transition: 1s linear;
-  background-position: center center;
+}
+
+.personal .title {
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: red;
+  color: transparent;
+  font-weight: normal;
+  letter-spacing: 6px;
 }
 
 .bar-wrap {
