@@ -15,56 +15,9 @@
 </head>
 <body>
 
-	<section class="page-head page-head paddingtb60 wave right drak-bg">
-		<div class="wide-wrapper dflex">
-			<figure class="anim wave profile-image dflex fadeup" anim-delay='200'>
-				<img class="rounded" srcset="img/turptesh.jpg" alt="profile-image" height="345" width="345" />	
-			</figure>
-			<div class="content fadeup anim" anim-delay='300'>
-				<h1 class="upcase page-title">Patel<span> Truptesh</span></h1>
-				<span class="subtitle">Website Developer</span>
-			</div> 
-		</div>
-	</section>
+	<button class="sitenavToggle"><span class="menuToggle"></span></button>
 
-	<section class="personal paddingtb60 anim fadeleft" anim-delay='200'>
-		<div class="wrapper">
-			<h2>About Me</h2>
-			<div class="content">
-			<p>Hello there,<br/>I am happy to share my knowledge with other people over the world. And that's why I have created this portfolio theme. I will try to come here with new kind of styles and updates those are coming into tech world.</p>
-			<p>Also, I am open to connect with people over the world that we can do something greatful. Here, my personal accounts links. Feel free to ask questions or let me know if you have any suggestions. I will be thankful to you.</p>
-			</div>
-		</div>
-	</section>
-
-	<section class="experience green-bg" >
-		<div class="wrapper">
-			<div class="inner-wrap dflex">
-			<h2 class="heading paddingtb60 fadeup anim" anim-delay='300'>Experience</h2>
-			<div class="timeline-hist anim" anim-delay='500'>
-				<article class="hist-content fadeup anim" anim-delay='500'>
-					<div class="content">
-						<div class="text">
-							<p class="title">Wordpress Developer <span class="title">- 2020</span></p>
-							<p class="hist-description">I have joined E2M pvt. solutions as a wordpress developer in 2020.</p>
-						</div>
-					</div>
-				</article>
-				<article class="hist-content fadeup anim" anim-delay='650'>
-					<div class="content">
-						<div class="text">
-							<p class="title">Frontend Developer <span class="title">- 2017 to 2019</span></p>
-							<p class="hist-description">I worked for DIT India for 2 years. I worked on various cms platforms mainly on Bigcommerce and Wordpress.</p>
-						</div>
-					</div>
-				</article>
-			</div>
-		</div>
-	</section>
-	</main>
-	<footer class="pfooter">
-		<div class="wrapper">
-			<div class="socials">
+	<div class="socials">
 				<ul class="reset">
 					
 					<li class="whatsapp">
@@ -90,12 +43,78 @@
 						</a>
 					</li>
 				</ul>
+	</div>
+
+	<section class="page-head anim wave invert page-head paddingtb60 wave right drak-bg">
+		<div class="wide-wrapper dflex">
+			<div class="inWrap">
+				<figure class="anim profile-image dflex fadeup" anim-delay='200'>
+					<img srcset="img/turptesh.jpg" alt="profile-image" height="345" width="345" />	
+				</figure>
+				<div class="content fadeup anim" anim-delay='300'>
+					<h1 class="page-title">Patel<span> Truptesh</span></h1>
+				</div> 
 			</div>
-			<p>Designed by Truptesh Patel</p>
+		</div>
+		<span class="fonts100 dev">FRONTEND</span>
+		<span class="fonts100 dev2">DEVELOPER</span>
+	</section>
+
+	<section class="personal paddingtb60 anim fadeleft" anim-delay='200'>
+		
+		<div class="wrapper">
+			<h2>About Me</h2>
+			<div class="content">
+			<p>Hello there,<br/>I am happy to share my knowledge with other people over the world. And that's why I have created this portfolio theme. I will try to come here with new kind of styles and updates those are coming into tech world.</p>
+			<p>Also, I am open to connect with people over the world that we can do something greatful. Here, my personal accounts links. Feel free to ask questions or let me know if you have any suggestions. I will be thankful to you.</p>
+			</div>
+		</div>
+	</section>
+
+
+	<div class="marqueeWrap transText fonts263 ">
+    <span class="inrItem"> Expienced in building cool animation effects and SEO friendly websites </span><span class="inrItem">Expienced in building cool animation effects and SEO friendly websites </span>
+  </div>
+
+	<section class="experience invert green-bg">
+		<div class="wrapper">
+			<div class="inner-wrap dflex">
+			<h2 class="heading paddingtb60 fadeup anim" >Experience</h2>
+			<div class="timeline-hist anim">
+				<article class="hist-content">
+					<div class="content">
+						<div class="text">
+							<p class="title">Wordpress Developer <span class="title">- 2020 to present</span></p>
+							<p class="hist-description">I have joined E2M Solutions as a junior wordpress developer in 2020. I have learn a lot in terms of technical and soft skills. I got to chance to work on some of the great projects with custom animations. I explore more into wordpress standard template techniques. </p>
+							<p>It's been three years and now I got chance to handeling client directly. I am managing all tasks myself and also prepare estimations for client's new projects or new requirements.</p>
+						</div>
+					</div>
+				</article>
+				<article class="hist-content">
+					<div class="content">
+						<div class="text">
+							<p class="title">Frontend Developer <span class="title">- 2017 to 2019</span></p>
+							<p class="hist-description">I worked for DIT India for two years. I worked on various cms platforms mainly on Bigcommerce and Wordpress.</p>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+	</main>
+	<footer class="pfooter">
+		<div class="wrapper">
+			<p>Designed and developed by Truptesh Patel</p>
 		</div>
 	</footer>
-	
-	<script type="text/javascript" src="js/app.js"></script>
+
+
+	<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+  <script type="text/javascript" src="js/app.js"></script>
+
 
 </body>
 </html>

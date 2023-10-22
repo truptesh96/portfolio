@@ -16,7 +16,7 @@ $big-wrappper-width: 96vw;
 $wrapper-width : 90vw;
 
 /*------- Typography --------*/
-body{ margin: 0; padding: 0; }
+body{ margin: 0; padding: 0; border-left: 44px solid #fff; }
 body, html{ font-family: $base-fonts; font-size: 16px; }
 
 button, span, label, a, img{ display: inline-block; }
@@ -176,8 +176,72 @@ textarea{ resize: none; height: 165px; }
 }
 
 
+/*
 .drak-bg{ background-color: #1B0F2D; }
+.green-bg{ background: rgba(15, 168, 150, .12); }
+*/
 
+
+body{
+	background: #f4f4f4;
+}
+
+
+.fonts100 { font-size: 100px; }
+
+@mixin transText($width:2px, $color: #707070) {
+    -webkit-text-stroke-width: $width;
+    -webkit-text-stroke-color: $color;
+    color: transparent;
+}
+
+.transText {
+
+   @include transText();
+    
+   @media (min-width: $tablet) {
+               
+      @include transText(1px,#707070);
+        
+    }
+}
+
+@keyframes marqueeanim{
+  0%{ transform : translateX(0%); }
+  100%{ transform : translateX(-100%); }  
+}
+
+.marqueeWrap { display: flex; flex-wrap: nowrap; font-size: 200px; white-space: nowrap; 
+  overflow: hidden;
+  
+  .inrItem {
+    margin: 0 30px 0 0; animation: marqueeanim infinite linear 40s;
+  }
+  
+}
+
+
+.sitenavToggle:active, .sitenavToggle:focus,
+.sitenavToggle:hover { background: transparent; outline: none; border: none;
+cursor: pointer; }
+
+
+.sitenavToggle:hover .menuToggle,
+.sitenavToggle:hover .menuToggle:after, .sitenavToggle:hover .menuToggle:before { 
+background: #0FA896; }
+ 
+
+.sitenavToggle { position: fixed; top: 0; left: 0; height: 60px; width: 44px; display: flex;
+  justify-content: center; padding: 8px 0 0; background: transparent; border: none; 
+  outline: none; }
+
+.menuToggle:after { margin: 8px 0 -8px; } 
+.menuToggle:before{ margin: 16px 0 8px; }
+
+.menuToggle:after, .menuToggle:before { height: 8px; background: #101b1b; width: 8px; 
+content: ''; display: block; border-radius: 50%; }
+
+.menuToggle { height: 8px; width: 8px; background: #101b1b; border-radius: 50%; }
 
 
 @media (min-width: $tablet)
@@ -228,10 +292,9 @@ background-position: center; background-attachment: fixed; position: relative; }
 
 /*------ footer -----*/
 .pfooter{ padding: 20px 0; text-align: center; }
-.socials { padding: 0; text-align: center; border-bottom: 2px solid #e24934; max-width: 290px; 
-margin: 0 auto 24px; }
-.socials svg{ width: 36px; height: 36px; }
+.socials { padding: 0; text-align: center; bottom: 22px; left: -4px; position: fixed; }
 .socials li a, .footer-social li{ display: inline-flex; line-height: 1; margin: 0 5px; }
-
+.socials ul { display: flex; flex-direction: column; }
+.socials ul svg { max-width: 26px; max-height: 26px; }
 
 @import 'home.scss';

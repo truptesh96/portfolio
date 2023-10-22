@@ -5,7 +5,7 @@
 transition: 0.8s 0.1s cubic-bezier(0.8,0,0.4,1); }
 .page-head{ position: relative; }
 .page-head > .dflex{ align-items: center; }
-.page-head.wave:before{ top: 90%; }
+.page-head:before{ top: 40px; left: 0; }
 .page-head figure.wave:before{ left: -15px; top: -40px; } 
 .page-head .content{ padding: 20px 0; }
 .page-head h1{ font-family: "Comfortaa", cursive; color: #e24934; overflow: hidden; margin : 0 0 25px; }
@@ -25,13 +25,38 @@ transition: 0.8s 0.1s cubic-bezier(0.8,0,0.4,1); }
 	100%{ background-position: center bottom; }
 }
 
-.personal{ position: relative; background: url(img/mountains.png) no-repeat; transition: 1s linear;
-background-position: center center; }
+
+section { position: relative; overflow-x: hidden; min-height: 800px; display: grid;
+    align-content: center; }
+
+.page-head .inWrap { max-width: 650px; align-items: center;
+    margin: 0 0 0 auto;
+    padding: 12px;
+    border-radius: 200px 0 0 200px;
+    display: flex; }
+
+
+.page-head .inWrap figure { border-radius: 200px 200px 0 0; border: 2px solid #fff; 
+	overflow: hidden; padding: 16px 12px; }
+
+.page-head .inWrap figure img { border-radius: 200px 200px 0 0; }
+
+.page-head .fonts100 { font-weight: bold; font-family: "Comfortaa", cursive;
+-webkit-text-stroke-color: red; -webkit-text-stroke-width: 2px; color: transparent;
+letter-spacing: 36px; text-shadow: 0 0 20px red; z-index: 1; top: 20%; display: block; }
+
+.page-head .page-title { padding-left: 30px; }
+
+
+.page-head .dev2{ text-align: right; }
+
+.personal{ position: relative; transition: 1s linear; background-position: center center; }
 .bar-wrap{ overflow: hidden; position: absolute; height: 100%; width: 100%; top: 0; }
 .personal:before{ top: 0; left: 0; }
 .personal:after{ bottom: 0; right: 0; }
 
 .experience{ position: relative; }
+.bgPattern { position: absolute; width: 100%; height: 100%; z-index: 1; }
 .experience .heading { color: #0fa896;  padding-bottom: 0; max-width: 355px; }
 .experience .timeline-hist .title{ color: #0fa896; margin: 0; font-weight: 900; text-transform: capitalize;
 	span { color: #e24934; }
@@ -40,7 +65,17 @@ background-position: center center; }
 .timeline-hist:after { content: ''; height: 100%; width: 4px; display: block; background: #bee4e0; 
 position: absolute; top: 0; left: 0; }
 
-.green-bg{ background: rgba(15, 168, 150, .12); }
+.timeline-hist .hist-content:after { content: "";
+    top: 4px;
+    left: -8px;
+    background: #0fa896;
+    border: 2px solid #009180;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2; }
+
 
 .socials li{ display: inline-block; margin: 15px 7.5px; }
 .socials li a svg{ fill: #e24934; transition: 0.5s ease all; }
@@ -48,9 +83,7 @@ position: absolute; top: 0; left: 0; }
 
 
 @media (min-width: $tablet) {
-	.page-head .content{ padding: 25px 25px 35px; }
-
-	.experience{ position: relative; }
+ 
 	.experience .inner-wrap{ align-items: flex-start; }
 	.experience .heading { position: sticky; top: 0; left: 0; }
 	.experience .title{ font-size: 20px; }
@@ -59,6 +92,7 @@ position: absolute; top: 0; left: 0; }
 
 @media (min-width: $desktop) {
 
-	.page-head .content{ padding: 25px 50px 40px; }
+	section { min-height: 100vh; }
+	.page-head .content{ padding: 25px 0 40px; }
 	.experience .title{ font-size: 24px; }
 }
